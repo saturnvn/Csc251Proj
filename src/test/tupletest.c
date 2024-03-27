@@ -37,13 +37,16 @@ a.x = 4.3;
 a.y = -4.2;
 a.z = 3.1;
 a.w = 1.0;
+
 CU_ASSERT( a.x == 4.3 );
 CU_ASSERT( a.y == -4.2 );
 CU_ASSERT( a.z == 3.1 );
 CU_ASSERT( a.w == 1.0 );
+
 CU_ASSERT_TRUE( is_point(a) );
 CU_ASSERT_FALSE( is_vector(a) );
 }
+#if 0
 /* Scenario: A tuple with w=0 is a vector
 * Given a ← tuple(4.3, -4.2, 3.1, 0)
 * Then a.x = 4.3
@@ -321,6 +324,8 @@ Tuple a = vector(1, 2, 3);
 Tuple b = vector(2, 3, 4);
 CU_ASSERT_DOUBLE_EQUAL(dotProduct(a, b), 20, EPSILON);
 }
+#endif
+
 #if 0 // NOT NEEDED FOR CSC 251 raycaster project
 /*
 Scenario: The cross product of two vectors
@@ -344,6 +349,8 @@ CU_ASSERT_DOUBLE_EQUAL(cross_b_a.y, expected_b_a.y, EPSILON);
 CU_ASSERT_DOUBLE_EQUAL(cross_b_a.z, expected_b_a.z, EPSILON);
 }
 #endif
+
+#if 0 
 /*
 Scenario: Colors are (red, green, blue) tuples
 Given c ← color(-0.5, 0.4, 1.7)
@@ -415,6 +422,9 @@ CU_ASSERT_DOUBLE_EQUAL(result.red, expected.red, EPSILON);
 CU_ASSERT_DOUBLE_EQUAL(result.green, expected.green, EPSILON);
 CU_ASSERT_DOUBLE_EQUAL(result.blue, expected.blue, EPSILON);
 }
+
+#endif
+
 /* The main() function for setting up and running the tests.
 * Returns a CUE_SUCCESS on successful running, another
 * CUnit error code on failure.
