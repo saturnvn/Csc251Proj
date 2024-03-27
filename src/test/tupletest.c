@@ -145,6 +145,24 @@ CU_ASSERT_TRUE( is_point(result) );
 CU_ASSERT_FALSE( is_vector(result) );
 }
 /*
+/*
+Scenario: Subtracting a vector from a point
+Given p ← point(3, 2, 1)
+And v ← vector(5, 6, 7)
+Then p - v = point(-2, -4, -6)
+*/
+void testSubtractVectorFromPoint(void) {
+Tuple p = point(3, 2, 1);
+Tuple v = vector(5, 6, 7);
+Tuple result = subTuples(p, v);
+CU_ASSERT( result.x == -2 );
+CU_ASSERT( result.y == -4 );
+CU_ASSERT( result.z == -6 );
+// subtracting a vector from a point yields a point
+CU_ASSERT_TRUE( is_point(result) );
+CU_ASSERT_FALSE( is_vector(result) );
+}
+/*
 Scenario: Subtracting two vectors
 Given v1 ← vector(3, 2, 1)
 And v2 ← vector(5, 6, 7)
